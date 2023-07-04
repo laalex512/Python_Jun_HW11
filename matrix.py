@@ -62,6 +62,33 @@ class Matrix:
             result += '\n'
         return result
 
+    def __eq__(self, other):
+        counter_self = 0
+        counter_other = 0
+        for line in self.num_list:
+            counter_self += sum(line)
+        for line in other.num_list:
+            counter_other += sum(line)
+        return counter_self == counter_other
+
+    def __ge__(self, other):
+        counter_self = 0
+        counter_other = 0
+        for line in self.num_list:
+            counter_self += sum(line)
+        for line in other.num_list:
+            counter_other += sum(line)
+        return counter_self >= counter_other
+
+    def __gt__(self, other):
+        counter_self = 0
+        counter_other = 0
+        for line in self.num_list:
+            counter_self += sum(line)
+        for line in other.num_list:
+            counter_other += sum(line)
+        return counter_self > counter_other
+
 
 if __name__ == '__main__':
     m1 = Matrix(3, 3)
